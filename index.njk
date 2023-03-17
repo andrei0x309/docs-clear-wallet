@@ -1,0 +1,139 @@
+---
+title: 'Clear EVM Wallet | Docs Landing Page'
+layout: layouts/main.njk
+styles:
+  - home.css
+---
+
+<div class="main hero mt-12 py-20 flex flex-col-reverse md:flex-row items-center relative mx-auto">
+
+  <div class="flex flex-col items-center text-center mt-8 md:mt-0 md:mr-auto md:items-start md:text-left">
+    <h1 class="text-5xl font-bold mb-8">Browser Extension Wallet <br>for EVM</h1>
+    <a href="https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0"
+       class="bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
+      Install from Chrome Store
+    </a>
+  </div>
+
+  <div>
+    <svg class="chevron" width="800px" height="603.3px" viewBox="0 0 205.8 155.2">
+      <style type="text/css">
+        .st0 {
+          fill: url(#gradient);
+        }
+      </style>
+      <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0" y1="77.5983" x2="205.8001" y2="77.5983">
+        <stop offset="0" style="stop-color: #359bdbc2;"></stop>
+        <stop offset="1" style="stop-color: #3721b1;"></stop>
+      </linearGradient>
+      <path class="st0" d="M205.8,19.1v117.1c0,10.5-8.5,19.1-19.1,19.1H42.5c-7.8,0-14.8-4.7-17.7-12L1.4,84.7c-1.8-4.6-1.8-9.6,0-14.2
+    L24.8,12c2.9-7.2,9.9-12,17.7-12h144.2C197.3,0,205.8,8.5,205.8,19.1z"/>
+    </svg>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <lottie-player id="lottieAnim" src="https://lottie.host/c9cf1395-a263-4c63-aec5-ab76b95ad67c/RhQgBo3lUf.json" 
+background="transparent" lopp style="max-width: 25rem;margin-top: -5rem;"></lottie-player>
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+let player = document.getElementById("lottieAnim");
+player.addEventListener("ready", () => {
+LottieInteractivity.create({
+    player: "#lottieAnim",
+    mode:"chain",
+    actions: [
+        {
+            state: "loop",
+            frames: [20, 100]
+        }
+    ]
+});
+});
+
+});
+</script>
+
+    {# <div class="terminal bg-blur dark rounded-md border border-gray-600 p-4 text-white">
+      <div class="flex mb-2">
+        <div class="w-3 h-3 mr-2 rounded-md bg-red-500"></div>
+        <div class="w-3 h-3 mr-2 rounded-md bg-yellow-500"></div>
+        <div class="w-3 h-3 rounded-md bg-green-500"></div>
+      </div>
+      <asciinema-player src="vr.cast" autoplay></asciinema-player>
+    </div> #}
+  </div>
+
+</div>
+
+<div class="bg-gray-100 dark:bg-opacity-5 mt-10 py-28">
+  <div class="main mx-auto">
+    <div class="text-xl text-center max-w-lg mx-auto pb-20">
+      Main wallet features include:
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-y-12 text-center">
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fa-brands fa-sourcetree"></i>
+        </div>
+        <h6 class="text-xl font-semibold">No Tracking & Open Source</h6>
+        <p class="highlight-description">
+         0 tracking data of any kind not even analytics.
+        Open source, based on etheres, not a fork wallet.
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fas fa-code-branch"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Simple Interface & implements MetamaskAPI</h6>
+        <p class="highlight-description">
+          Simple and intuitive interface for managing accounts and networks.
+          Implements MetamaskAPI, so you can use any dapp with this wallet.
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fas fa-terminal"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Full controll</h6>
+        <p class="highlight-description">
+          Full control over your private keys and accounts, only local storage is used.
+          Set encryption how you like, even require password on every transaction/sign.
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fas fa-file-code"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Import / Export</h6>
+        <p class="highlight-description">
+          Import / Export accounts, add any network or account supports privte key or mnemonic import.
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fa-solid fa-eraser"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Wipe with a click</h6>
+        <p class="highlight-description">
+          Wipe all data with a single click
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Lightweight</h6>
+        <p class="highlight-description">
+          Lightweight, no ads, no tracking, no analytics, no bloatware.
+          Less then 400kb.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main my-12 py-12 flex items-center justify-center mx-auto">
+  <a href="/docs"
+     class="text-xl bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
+    Get started
+  </a>
+</div>

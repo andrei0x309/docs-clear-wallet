@@ -1,0 +1,9 @@
+type: docs
+layout: layouts/docs.njk
+groups:
+  - id: getting-started
+    title: Getting started
+  - id: guides
+    title: Feature docs
+  - id: help-support
+    title: Help and support
