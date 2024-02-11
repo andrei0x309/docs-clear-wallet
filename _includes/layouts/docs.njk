@@ -24,9 +24,9 @@ scripts:
               {% for docsPage in groupsPages[group.id] %}
                 <li>
                   <a
-                    class="p-2 transition-colors duration-200 block rounded-md hover:text-blue-500 {% if url == docsPage.data.url %}text-primary bg-blue-50 dark:bg-gray-800{% else %}text-secondary{% endif %}"
-                    href="{{ docsPage.data.url }}">
-                    {{ docsPage.data.title }}
+                    class="p-2 transition-colors duration-200 block rounded-md hover:text-blue-500 {% if url == docsPage.url %}text-primary bg-blue-50 dark:bg-gray-800{% else %}text-secondary{% endif %}"
+                    href="{{ docsPage.url }}">
+                    {{ docsPage.title }}
                   </a>
                 </li>
               {% endfor %}
@@ -42,7 +42,7 @@ scripts:
             </a>
 <a href="https://mirror.xyz/andrei0x309.eth/9nc8UXrGIGOvz694ZY2gouS1JM9L8-Z8ITLNtirqD6Q" target="_blank">
               <span class="sr-only">Mirror CLW Article</span>
-                <svg class="w-5" version="1.1" viewBox="0 0 12.7 12.7" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-5" version="1.1" viewBox="0 0 30px 30px" xmlns="http://www.w3.org/2000/svg">
     <rect
       transform="matrix(-.003489 1 -1 .003744 0 0)"
       x="2.677"
@@ -80,14 +80,14 @@ scripts:
           <li class="mr-auto my-0">
             <a
               class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none"
-              href="{{ previousPost.data.url | url }}"
+              href="{{ previousPost.url | url }}"
               rel="prev">
               <i
                 class="fas fa-arrow-left mr-6 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
               <div class="flex flex-col items-end">
                 <span
                   class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
-                <span class="text-secondary">{{ previousPost.data.title }}</span>
+                <span class="text-secondary">{{ previousPost.title }}</span>
               </div>
             </a>
           </li>
@@ -98,12 +98,12 @@ scripts:
           <li class="ml-auto my-0">
             <a
               class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none"
-              href="{{ nextPost.data.url | url }}"
+              href="{{ nextPost.url | url }}"
               rel="prev">
               <div class="flex flex-col items-start mr-6">
                 <span
                   class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
-                <span class="text-secondary">{{ nextPost.data.title }}</span>
+                <span class="text-secondary">{{ nextPost.title }}</span>
               </div>
               <i
                 class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>

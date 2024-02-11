@@ -7,7 +7,7 @@ styles:
 
 <div class="main hero mt-12 py-20 flex flex-col-reverse md:flex-row items-center relative mx-auto">
 
-  <div class="flex flex-col items-center text-center mt-8 md:mt-0 md:mr-auto md:items-start md:text-left">
+  <div class="pl-12 flex flex-col items-center text-center mt-8 md:mt-0 md:mr-auto md:items-start md:text-left">
     <h1 class="text-5xl font-bold mb-8">Browser Extension Wallet <br>for EVM</h1>
     <a href="https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0"
        class="bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
@@ -29,27 +29,14 @@ styles:
       <path class="st0" d="M205.8,19.1v117.1c0,10.5-8.5,19.1-19.1,19.1H42.5c-7.8,0-14.8-4.7-17.7-12L1.4,84.7c-1.8-4.6-1.8-9.6,0-14.2
     L24.8,12c2.9-7.2,9.9-12,17.7-12h144.2C197.3,0,205.8,8.5,205.8,19.1z"/>
     </svg>
-    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
-    <lottie-player id="lottieAnim" src="https://lottie.host/c9cf1395-a263-4c63-aec5-ab76b95ad67c/RhQgBo3lUf.json" 
-background="transparent" lopp style="max-width: 25rem;margin-top: -5rem;"></lottie-player>
- <script>
-document.addEventListener('DOMContentLoaded', () => {
-let player = document.getElementById("lottieAnim");
-player.addEventListener("ready", () => {
-LottieInteractivity.create({
-    player: "#lottieAnim",
-    mode:"chain",
-    actions: [
-        {
-            state: "loop",
-            frames: [20, 100]
-        }
-    ]
-});
-});
+    <lottie-player id="lottieAnim" src="{{'/lottie/logo.json'}}" 
+background="transparent" autoplay loop style="max-width: 60%;
+    position: relative;
+    right: -38%;
+    margin-top: -3rem;
+    opacity: 0.95;
+    filter: sepia(0.1) invert(0.1) hue-rotate(45deg) drop-shadow(2px 4px 5px #222) saturate(0.2);"></lottie-player>
 
-});
-</script>
 
     {# <div class="terminal bg-blur dark rounded-md border border-gray-600 p-4 text-white">
       <div class="flex mb-2">
@@ -63,10 +50,10 @@ LottieInteractivity.create({
 
 </div>
 
-<div class="bg-gray-100 dark:bg-opacity-5 mt-10 py-28">
+<div class="bg-gray-100 dark:bg-opacity-5 mt-10 py-24">
   <div class="main mx-auto">
-    <div class="text-xl text-center max-w-lg mx-auto pb-20">
-      Main wallet features include:
+   <div class="text-3xl text-center max-w-lg mx-auto pb-20 text-gray-800 dark:text-gray-200 font-semibold leading-relaxed">
+     Unique Features
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-y-12 text-center">
       <div class="flex flex-col mx-auto items-center max-w-xs">
@@ -127,13 +114,43 @@ LottieInteractivity.create({
           Less then 400kb.
         </p>
       </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Write/Read Contracts</h6>
+        <p class="highlight-description">
+           This wallet allows you to load and save ABIs and interact with contracts.
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Right-click your address</h6>
+        <p class="highlight-description">
+           This wallet allows you to right click your current selected account address on 
+           any editable field on every website including inside of the wallet itself.
+        </p>
+      </div>
+      <div class="flex flex-col mx-auto items-center max-w-xs">
+        <div class="highlight-icon">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <h6 class="text-xl font-semibold">Repeatable Actions</h6>
+        <p class="highlight-description">
+            This wallet allows you to repeat any save interactions with contracts 
+            so you can easily repeat the same actions.
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="main my-12 py-12 flex items-center justify-center mx-auto">
+<div class="main my-12 py-12 flex flex-col items-center justify-center mx-auto">
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qmOUM7bXzpE?si=02qzG5pQsBGRhtpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <a href="/docs"
-     class="text-xl bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
+     class="text-xl mt-4 bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
     Get started
   </a>
 </div>

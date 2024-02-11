@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 html {
   scroll-padding-top: 70px;
@@ -19,11 +20,11 @@ h1, h2, h3, h4, h5, h6, .font-headings {
 }
 
 .text-secondary {
-  @apply text-gray-500 dark:text-gray-400;
+  @apply text-gray-500 dark:text-gray-200;
 }
 
 .text-tertiary {
-  @apply text-gray-400 dark:text-gray-600;
+  @apply text-gray-400 dark:text-gray-400;
 }
 
 .text-emphasis {
@@ -47,11 +48,11 @@ h1, h2, h3, h4, h5, h6, .font-headings {
 }
 
 .highlight-description {
-  @apply mt-2 mb-4 text-secondary;
+  @apply mt-2 mb-4;
 }
 
 article {
-  @apply text-secondary leading-7;
+  @apply leading-7;
 }
 
 
@@ -80,7 +81,7 @@ article strong a {
 }
 
 article h1 {
-  @apply text-primary leading-tight border-b dark:border-gray-300/10 text-4xl font-medium mt-16 mb-6 pb-2;
+  @apply leading-tight border-b dark:border-gray-300/10 text-4xl font-medium mt-16 mb-6 pb-2;
 }
 
 article > h1:first-of-type {
@@ -88,15 +89,15 @@ article > h1:first-of-type {
 }
 
 article h2 {
-  @apply text-primary leading-tight border-b dark:border-gray-300/10 text-2xl font-medium mt-16 mb-6 pb-2;
+  @apply leading-tight border-b dark:border-gray-300/10 text-2xl font-medium mt-16 mb-6 pb-2;
 }
 
 article h3 {
-  @apply text-primary leading-snug text-lg font-medium mb-4 mt-8;
+  @apply leading-snug text-lg font-medium mb-4 mt-8;
 }
 
 article h4 {
-  @apply text-primary leading-none text-base font-medium mb-4 mt-6;
+  @apply leading-none text-base font-medium mb-4 mt-6;
 }
 
 article h5 {
@@ -220,10 +221,9 @@ article h3:hover > .header-anchor,
   width: 95%;
   max-width: 15rem;
   z-index: 1;
+  padding-left: 1rem;
   margin-right: 1rem;
   @apply fixed
-         bg-white
-         dark:bg-blue-dark
          px-4
          inset-y-0
          left-0
@@ -284,7 +284,7 @@ article h3:hover > .header-anchor,
 .main {
 
   max-width: 90rem;
-  @apply md:mx-auto p-4;
+  @apply md:mx-auto;
 }
 
 .h-fill {
@@ -294,5 +294,3 @@ article h3:hover > .header-anchor,
 .max-w-xxs {
   max-width: 14rem;
 }
-
-@tailwind utilities;

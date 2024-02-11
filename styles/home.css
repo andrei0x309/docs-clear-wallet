@@ -27,6 +27,17 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  .asciinema-theme-asciinema .asciinema-terminal.font-small {
+    font-size: 8px;
+  }
+
+  .hero .chevron {
+    width: 1050px;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .asciinema-theme-asciinema .asciinema-terminal.font-small {
     font-size: 8px;

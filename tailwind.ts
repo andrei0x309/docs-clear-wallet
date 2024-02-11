@@ -1,8 +1,11 @@
-module.exports = {
+import typography from "npm:@tailwindcss/typography";
+
+export const tWindConfig = {
   darkMode: 'class',
+  plugins: [typography],
   content: [
     'index.njk',
-    '404.html',
+    '404.njk',
     './_includes/**/*.{html,njk}',
   ],
   safelist: ['ml-2', 'ml-4', 'ml-6'],

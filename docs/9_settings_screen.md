@@ -2,11 +2,14 @@
 title: Settings Screen
 group: guides
 description: How to use the settings screen
+type: docs
+pageOrder: 6
+# url: ./settings-screen
 ---
 
 # Settings Screen
 
-<p class="pb-4">Settings screen lets you change the settings of the extension.</p>
+<p class="pb-4">Settings screen is the place where you can manage the settings of the extension.</p>
 
 <p class="pb-4">You can change security settings: enable encryption, enable auto lock, change the auto lock time, or enable perma-lock which will force you to enter the password every time the private key is needed.</p>
 

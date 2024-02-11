@@ -3,13 +3,16 @@ title: Installation
 group: getting-started
 description: How to install Clear EVM wallet
 templateEngine: njk,md
+type: docs
+pageOrder: 2
+# url: ./installation
 ---
 
 # Installation
 
 You can get the extension from Chrome store at [https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0](https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0)
 
-or you can install it from source code.
+or you can build and install it from source code.
 
 ## Installing from source code
 
