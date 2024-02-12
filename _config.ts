@@ -1,8 +1,8 @@
 import lume from 'lume/mod.ts';
 import date from 'lume/plugins/date.ts';
 import codeHighlight from 'lume/plugins/code_highlight.ts';
-import markdownItAnchor from 'https://jspm.dev/markdown-it-anchor';
-import { load } from 'https://jspm.dev/cheerio';
+import markdownItAnchor from 'npm:markdown-it-anchor';
+import { load } from 'npm:cheerio';
 import sass from "lume/plugins/sass.ts";
 import postcss from "lume/plugins/postcss.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
