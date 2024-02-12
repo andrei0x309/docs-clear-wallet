@@ -16,6 +16,6 @@ If you need any help feel free to ask questions on [GitHub Discussions](https://
 
 <p class="pb-4">
 
-<a href="https://mirror.xyz/andrei0x309.eth/9nc8UXrGIGOvz694ZY2gouS1JM9L8-Z8ITLNtirqD6Q">February 8th, 2024</a>
-<a href="https://mirror.xyz/andrei0x309.eth/9nc8UXrGIGOvz694ZY2gouS1JM9L8-Z8ITLNtirqD6Q">November 18th, 2022</a>
+<a href="https://mirror.xyz/andrei0x309.eth/J2R0-rXnEe7nQWILNgwHpFMQXt92ICzeb6WxmepI6Vw?referrerAddress=0x50cCa5ed8B4455fbe316785269FC82500b67fD48">February 12th, 2024</a>
+<a href="https://mirror.xyz/andrei0x309.eth/9nc8UXrGIGOvz694ZY2gouS1JM9L8-Z8ITLNtirqD6Q?referrerAddress=0x50cCa5ed8B4455fbe316785269FC82500b67fD48">November 18th, 2022</a>
 </p>
