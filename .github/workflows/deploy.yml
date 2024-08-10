@@ -2,7 +2,9 @@ name: Publish on GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - dev
 
 permissions:
   contents: read
@@ -32,7 +34,8 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: '_site'
-
+    
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        if: github.ref == 'refs/heads/main'

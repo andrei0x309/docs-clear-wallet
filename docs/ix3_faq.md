@@ -5,7 +5,7 @@ description: Frequently asked questions
 templateEngine: njk,md
 type: docs
 pageOrder: 3
-url: ./faq
+#url: ./faq
 ---
 
 ### FAQ

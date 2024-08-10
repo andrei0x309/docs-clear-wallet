@@ -7,3 +7,5 @@ groups:
     title: Feature docs
   - id: help-support
     title: Help and support
+  - id: github
+    title: From GitHub

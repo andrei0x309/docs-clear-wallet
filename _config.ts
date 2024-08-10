@@ -8,16 +8,8 @@ import postcss from "lume/plugins/postcss.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import { tWindConfig } from "./tailwind.ts";
-
-
-const download = async (url: string, path: string ) => {
-  const dir = path.split('/').slice(0, -1).join('/');
-  await Deno.mkdir(dir, { recursive: true });
-  const response = await fetch(url);
-  const f = Deno.openSync(path, { write: true, create: true, createNew: true});
-  await Deno.write(f.rid, new Uint8Array(await response.arrayBuffer()));
-  f.close();
-}
+import { writeChangeLog } from './utils/github.ts';
+import { download } from './utils/misc.ts';
 
 
 const site = lume({
@@ -67,12 +59,16 @@ site.filter('toc', content => {
     const $el = $(el);
     toc.push({
       level: Number(el.name.substring(1)),
-      anchor: $el.attr('id'),
+      anchor: $el.attr('id') as string,
       text: $el.text().replace(/^#/, ''),
     });
   });
   return toc;
 });
+
+site.addEventListener("beforeBuild", async () => {
+  await writeChangeLog();
+})
 
 site.addEventListener("afterBuild", async () => {
   await Promise.all([
