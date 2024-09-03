@@ -49,7 +49,7 @@ site.filter('groups', items => items.reduce((grouped: any, item: any) => {
     const {group} = item;
     (grouped[group] = grouped[group] || []).push(item);
     return grouped;
-  }, {})
+  }, {}).sort((a: any, b: any) => a[1][0].pageOrder - b[1][0].pageOrder)
 );
 
 site.filter('toc', content => {
