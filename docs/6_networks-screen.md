@@ -3,6 +3,7 @@ title: Networks Screen
 group: guides
 description: How to use the networks screen
 # url: ./networks-screen
+type: docs
 pageOrder: 3
 ---
 

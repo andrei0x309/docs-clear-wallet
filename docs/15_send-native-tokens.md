@@ -3,7 +3,7 @@ title: Send Native Tokens Screen
 group: guides
 description: How to use the Send Native Tokens Screen
 type: docs
-pageOrder: 7
+pageOrder: 8
 # url: ./send-native-tokens
 ---
 

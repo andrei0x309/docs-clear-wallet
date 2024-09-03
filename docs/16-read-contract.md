@@ -3,7 +3,7 @@ title: Read Contract Screen
 group: guides
 description: How to use the Read Contract Screen
 type: docs
-pageOrder: 8
+pageOrder: 9
 # url: ./read-contract
 ---
 

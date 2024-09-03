@@ -5,7 +5,6 @@ description: How to install Clear EVM wallet
 templateEngine: njk,md
 type: docs
 pageOrder: 2
-# url: ./installation
 ---
 
 # Installation

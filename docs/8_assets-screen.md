@@ -3,8 +3,7 @@ title: Assets Screen
 group: guides
 description: How to use the assets screen
 type: docs
-pageOrder: 5
-# url: ./assets-screen
+pageOrder: 6
 ---
 
 # Assets Screen
