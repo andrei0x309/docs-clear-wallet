@@ -3,8 +3,7 @@ title: Settings Screen
 group: guides
 description: How to use the settings screen
 type: docs
-pageOrder: 6
-# url: ./settings-screen
+pageOrder: 7
 ---
 
 # Settings Screen

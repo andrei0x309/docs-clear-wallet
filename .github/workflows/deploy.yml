@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - dev
+  schedule:
+    - cron: '5 2 * * *'
 
 permissions:
   contents: read
@@ -39,3 +41,18 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
         if: github.ref == 'refs/heads/main'
+
+      # Adding this because schedule workflows may stop if there's a 60-day gap between repo activity
+      - name: Write Schedule Log
+        run: echo "Deployed at $(date)\n" >> schedule.log
+        if: github.event_name == 'schedule'
+
+      - name: Commit Schedule Log
+        id: commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "chore: Update schedule log $(date)"
+          add: "schedule.log"
+          committer_name: "GitHub Actions"
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+        if: github.event_name == 'schedule'

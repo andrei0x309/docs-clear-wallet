@@ -3,8 +3,7 @@ title: History Screen
 group: guides
 description: How to use the history screen
 type: docs
-pageOrder: 4
-# url: ./history-screen
+pageOrder: 5
 ---
 
 # History Screen
