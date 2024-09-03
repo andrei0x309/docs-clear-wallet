@@ -47,9 +47,10 @@ site.use(postcss());
 
 site.filter('groups', items => items.reduce((grouped: any, item: any) => {
     const {group} = item;
-    (grouped[group] = grouped[group] || []).push(item);
+    (grouped[group] = grouped[group] || []).push(item)
+    grouped[group].sort((a: any, b: any) => a.pageOrder - b.pageOrder);
     return grouped;
-  }, {}).sort((a: any, b: any) => a[1][0].pageOrder - b[1][0].pageOrder)
+  }, {})
 );
 
 site.filter('toc', content => {
