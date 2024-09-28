@@ -25,7 +25,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image" content="{{ '/images/cover.png' | url }}">
+  <meta property="og:image" content="{{ 'https://clear-wallet.flashsoft.eu/images/cover.png' | url }}">
+  <meta property="og:title" content="{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <!-- Farcaster static frame -->
+  <meta name="fc:frame" content="vNext">
+  <meta name="fc:frame:image" content="{{ 'https://clear-wallet.flashsoft.eu/images/cover.png' | url }}">
+  <meta name="fc:frame:post_url" content="https://clear-wallet.flashsoft.eu">
+  <meta name="fc:frame:image:aspect_ratio" content="1.91:1">
+  <meta name="fc:frame:button:1" content="ChromeStore">
+  <meta name="fc:frame:button:1:action" content="link">
+  <meta name="fc:frame:button:1:target" content="https://chromewebstore.google.com/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?authuser=0&hl=en">
+  <meta name="fc:frame:button:2" content="GitHub">
+  <meta name="fc:frame:button:2:action" content="link">
+  <meta name="fc:frame:button:2:target" content="https://github.com/andrei0x309/clear-wallet">
+  <meta name="fc:frame:button:3" content="Docs">
+  <meta name="fc:frame:button:3:action" content="link">
+  <meta name="fc:frame:button:3:target" content="https://clear-wallet.flashsoft.eu/docs/"> 
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="{{ '/images/wallet_48.png' | url }}">
