@@ -3,6 +3,27 @@
 @tailwind utilities;
 
 
+.dark ::-webkit-scrollbar{
+  height: 7px;
+  width: 7px;
+  background: #747474;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(34, 34, 34);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:horizontal{
+  background: rgb(34, 34, 34);
+  border-radius: 4px;
+}
+
+.dark {
+  scrollbar-color: #747474 rgb(34, 34, 34);
+  scrollbar-width: thin;
+}
+
 html {
   scroll-padding-top: 70px;
 }
@@ -30,6 +51,14 @@ h1, h2, h3, h4, h5, h6, .font-headings {
 
 .text-emphasis {
   @apply text-gray-800 dark:text-white;
+}
+
+:not(.dark) .fa-moon {
+  display: block;
+}
+
+:not(.dark) .fa-sun {
+  display: none;
 }
 
 .dark .fa-sun {
