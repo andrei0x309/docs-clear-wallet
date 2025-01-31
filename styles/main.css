@@ -1,6 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.dark ::-webkit-scrollbar{
+  height: 7px;
+  width: 7px;
+  background: #747474;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(34, 34, 34);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:horizontal{
+  background: rgb(34, 34, 34);
+  border-radius: 4px;
+}
+
+.dark {
+  scrollbar-color: #747474 rgb(34, 34, 34);
+  scrollbar-width: thin;
+}
 
 html {
   scroll-padding-top: 70px;
@@ -31,6 +48,14 @@ h1, h2, h3, h4, h5, h6, .font-headings {
   @apply text-gray-800 dark:text-white;
 }
 
+:not(.dark) .fa-moon {
+  display: block;
+}
+
+:not(.dark) .fa-sun {
+  display: none;
+}
+
 .dark .fa-sun {
   display: block;
 }
@@ -42,6 +67,7 @@ h1, h2, h3, h4, h5, h6, .font-headings {
 .fa-sun {
   display: none;
 }
+
 
 .highlight-icon {
   @apply text-blue-600 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-6 shadow-lg rounded-full bg-white;

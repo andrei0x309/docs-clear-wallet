@@ -1,10 +1,16 @@
 {
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
-    "build": "deno task lume",
-    "serve": "deno task lume -s"
+    "build": "deno install --allow-scripts=npm:@parcel/watcher && deno task lume",
+    "serve": "deno install --allow-scripts=npm:@parcel/watcher &&  deno task lume -s"
   },
   "imports": {
-    "lume/": "https://deno.land/x/lume@v2.0.3/"
-  }
+    "lume/": "https://deno.land/x/lume@v2.5.1/"
+  },
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ]
+  },
+  "nodeModulesDir": "auto"
 }

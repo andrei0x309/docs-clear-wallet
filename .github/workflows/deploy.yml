@@ -24,7 +24,7 @@ jobs:
       - name: Setup Deno environment
         uses: denolib/setup-deno@v2
         with:
-          deno-version: '1.x'
+          deno-version: '2.x'
 
       - name: Build site
         run: deno task build
@@ -33,14 +33,10 @@ jobs:
         uses: actions/configure-pages@v2
       
       - name: Upload artifact
+        id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
-    
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        if: github.ref == 'refs/heads/main'
 
       # Adding this because schedule workflows may stop if there's a 60-day gap between repo activity
       - name: Write Schedule Log
@@ -56,3 +52,16 @@ jobs:
           committer_name: "GitHub Actions"
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
         if: github.event_name == 'schedule'
+  
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'

@@ -10,13 +10,16 @@ import nunjucks from "lume/plugins/nunjucks.ts";
 import { tWindConfig } from "./tailwind.ts";
 import { writeChangeLog } from './utils/github.ts';
 import { download } from './utils/misc.ts';
+import robots from "lume/plugins/robots.ts";
+import sitemap from "lume/plugins/sitemap.ts";
+
 
 
 const site = lume({
-  location: new URL('http://localhost:3535'),
+  location: new URL('https://clear-wallet.flashsoft.eu'),
   server: {
     port: 3535,
-  }
+  },
 }, {
   markdown: {
     plugins: [
@@ -43,6 +46,12 @@ site.use(tailwindcss({
   options: tWindConfig as any,
 }));
 site.use(postcss());
+site.use(robots({
+  filename: "robots.txt",
+}))
+site.use(sitemap({
+  filename: "sitemap.xml",
+}))
 
 
 site.filter('groups', items => items.reduce((grouped: any, item: any) => {
