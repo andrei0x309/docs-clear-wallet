@@ -1,3 +1,4 @@
 _site/
 .firebase/
 .idea
+node_modules/

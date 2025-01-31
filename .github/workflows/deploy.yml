@@ -24,7 +24,7 @@ jobs:
       - name: Setup Deno environment
         uses: denolib/setup-deno@v2
         with:
-          deno-version: '1.x'
+          deno-version: '2.x'
 
       - name: Build site
         run: deno task build
@@ -64,4 +64,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        # if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
