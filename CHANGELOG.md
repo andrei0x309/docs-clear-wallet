@@ -1,5 +1,17 @@
 # Changelog
 
+## AUG 2025
+
+- updated to latest lume 3.x.x
+- updated to latest tailwind 4.x.x
+- minor UI changes and color pallete changes
+- updated screenshots to a newer version of the app
+- changed some documentaions pages a bit
+- removed some plugins
+- adapted config and code to new lume requirements
+- added brotli compression
+- updated deploy workflow
+
 ## FEB 2025
 
 - updated to latest lume 2.5.x

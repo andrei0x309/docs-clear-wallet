@@ -19,9 +19,9 @@ Build the extension:
 
 ```shell
 $ git clone https://github.com/andrei0x309/clear-wallet
-$ cd clear-wallet
-& yarn install
-$ yarn build
+$ cd clear-wallet & bun install
+$ bun run build
 ```
+
 <br/><br/>
 Then go to [chrome://extensions/](chrome://extensions/) and enable developer mode, then click on "Load unpacked" and select the `dist` folder.

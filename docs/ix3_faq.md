@@ -12,10 +12,10 @@ pageOrder: 3
 
 Q: Why use Ionic?
 <br/>
-A: The main idea was to extended to mobile, but I dropped the idea as mobile is not a very friendly platform for protecting privacy.
-But Ionic as an UI framework provice a nice UX and is intuitive to use.
+A: The main idea was to extended to mobile, but I dropped the idea as mobile platforms are very friendly to privacy.
+But Ionic as an UI framework provice a nice base user experience as its intuitive and easy to use.
 <br/><br/>
-Q: Is released on the Chrome web store?
+Q: Is the wallet released on the Chrome web store?
 <br/>
 A: Yes, Link: [https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en](https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en)
 <br/><br/>
@@ -23,13 +23,13 @@ Q: What are some features?
 <br/>
 A: It has many features check the introduction page for more details. [Introduction](/docs/) page.
 <br/><br/>
-Q: Is this ready to use?
+Q: It's ready for use?
 <br/>
-A: I am using it as my main wallet for over 2 years, so I would say yes, but it is up to you to decide if it is ready for you.
+A: I am using it as my main wallet for over 2+ years(since 2022), so I would say yes, but it is up to you to decide if it is ready for you.
 <br/><br/>
 Q: Will this project be heavily maintained?
 <br/>
-A: I do not add many features as I think it is feature complete, but I will maintain it as long as I use it, and I don't see any reason to stop using it.
+A: I think it is feature complete( I will still add features but it will remain a rather simple wallet), I will maintain it as long as I use it, and I don't have any reason to stop using it.
 
 ### Mirror Articles About Clear EVM Wallet
 

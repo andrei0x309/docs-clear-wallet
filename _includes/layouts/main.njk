@@ -1,178 +1,182 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-<head>
-  <script>
-    function refreshDarkMode() {
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.dataset.theme = 'dark';
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.dataset.theme = 'light';
-        document.documentElement.classList.remove('dark');
+  <head>
+    <script>
+      function refreshDarkMode() {
+        if (
+          localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document
+            .documentElement
+            .dataset
+            .theme = 'dark';
+          document
+            .documentElement
+            .classList
+            .add('dark');
+        } else {
+          document
+            .documentElement
+            .dataset
+            .theme = 'light';
+          document
+            .documentElement
+            .classList
+            .remove('dark');
+        }
       }
-    }
-    refreshDarkMode();
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('#dark-mode-toggle').addEventListener('click', () => {
-        const darkModeActive = !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.theme === 'dark';
-        localStorage.theme = darkModeActive ? 'light' : 'dark';
-        refreshDarkMode();
+      refreshDarkMode();
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('#dark-mode-toggle').addEventListener('click', () => {
+          const darkModeActive = !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches || localStorage.theme === 'dark';
+          localStorage.theme = darkModeActive
+            ? 'light'
+            : 'dark';
+          refreshDarkMode();
+        });
       });
-    });
-  </script>
- 
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image" content="{{ 'https://clear-wallet.flashsoft.eu/images/cover.png' | url }}">
-  <meta property="og:title" content="{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:url" content="{{ site.url }}{{ url }}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="{{ site.title }}">
-
-  <!-- Farcaster static frame -->
-  <meta name="fc:frame" content="vNext">
-  <meta name="fc:frame:image" content="{{ 'https://clear-wallet.flashsoft.eu/images/cover.png' | url }}">
-  <meta name="fc:frame:post_url" content="https://clear-wallet.flashsoft.eu">
-  <meta name="fc:frame:image:aspect_ratio" content="1.91:1">
-  <meta name="fc:frame:button:1" content="ChromeStore">
-  <meta name="fc:frame:button:1:action" content="link">
-  <meta name="fc:frame:button:1:target" content="https://chromewebstore.google.com/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?authuser=0&hl=en">
-  <meta name="fc:frame:button:2" content="GitHub">
-  <meta name="fc:frame:button:2:action" content="link">
-  <meta name="fc:frame:button:2:target" content="https://github.com/andrei0x309/clear-wallet">
-  <meta name="fc:frame:button:3" content="Docs">
-  <meta name="fc:frame:button:3:action" content="link">
-  <meta name="fc:frame:button:3:target" content="https://clear-wallet.flashsoft.eu/docs/"> 
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="{{ '/images/wallet_48.png' | url }}">
-  <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
-  <link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
-  {% for style in styles %}
-    <link rel="stylesheet" href="{{ ('/styles/' + style) | url }}"/>
-  {% endfor %}
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{'css/vendor/docsearch.css' | url }}" />
-  <script src="{{'js/vendor/FA-kit.js' | url }}" crossorigin="anonymous"></script>
-
-  {# <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQEPZKHB8V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '');
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied',
-    });
-  </script> #}
-</head>
-<body class="dark:bg-stone-800 dark:text-stone-100">
-  <header class="p-4 fixed top-0 z-20 w-full border-b border-gray-100 dark:border-indigo-100/10 bg-blur dark:bg-stone-700 dark:bg-opacity-20 text-emphasis mx-auto">
-    <div class="main flex items-center">
-      {% if hasMenu %}
-        <button id="menu-toggle"
-                class="block px-2 w-8 md:hidden mr-4 outline-none hover:text-indigo-500 focus:text-indigo-500"
-                aria-label="Menu toggle"
-                aria-expanded="false"
-                aria-controls="menu">
-          <i class="fas fa-bars" aria-hidden="true"></i>
-          <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
+    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ title }}
+      {% if url != '/' %}
+        | {{ site.title }}
       {% endif %}
-      <a href="/" class="mr-auto flex items-center flex-shrink-0">
-        <img src="{{ '/images/wallet_48.png' | url }}" alt="Clear Wallet Logo" class="h-8 mr-2">
-        <span class="md:block hidden text-secondary text-xl font-bold font-headings">Clear EVM Wallet</span>
-      </a>
-      {# {% if url != '/' %} #}
+    </title>
+    <meta name="description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image" content="{{ 'https://clear-wallet.flashsoft.eu/images/cover.png' | url }}">
+    <meta property="og:title" content="{{ title }}{% if url != '/' %} | {{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if url != '/' %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ url }}">
+    <meta property="og:type" content="website">
+    <meta
+    property="og:site_name" content="{{ site.title }}"> <!-- Farcaster static frame -->
+    <meta name="fc:frame" content="vNext">
+    <meta name="fc:frame:image" content="{{ 'https://clear-wallet.flashsoft.eu/images/cover.png' | url }}">
+    <meta name="fc:frame:post_url" content="https://clear-wallet.flashsoft.eu">
+    <meta name="fc:frame:image:aspect_ratio" content="1.91:1">
+    <meta name="fc:frame:button:1" content="ChromeStore">
+    <meta name="fc:frame:button:1:action" content="link">
+    <meta
+      name="fc:frame:button:1:target"
+      content="https://chromewebstore.google.com/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?authuser=0&hl=en">
+    <meta name="fc:frame:button:2" content="GitHub">
+    <meta name="fc:frame:button:2:action" content="link">
+    <meta name="fc:frame:button:2:target" content="https://github.com/andrei0x309/clear-wallet">
+    <meta name="fc:frame:button:3" content="Docs">
+    <meta name="fc:frame:button:3:action" content="link">
+    <meta name="fc:frame:button:3:target" content="https://clear-wallet.flashsoft.eu/docs/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="{{ '/images/wallet_48.png' | url }}">
+    <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
+    <link rel="stylesheet" href="{{ '/styles/main.css' | url }}">
+    {% for style in styles %}
+      <link rel="stylesheet" href="{{ ('/styles/' + style) | url }}"/>
+    {% endfor %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'css/vendor/docsearch.css' | url }}"/>
+    <script src="{{ 'js/vendor/FA-kit.js' | url }}" crossorigin="anonymous"></script>
+    {# <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQEPZKHB8V"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '');
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied',
+            });
+          </script> #}
+  </head>
+  <body class="dark:bg-neutral-800 dark:text-neutral-100">
+    <header class="p-4 fixed top-0 z-20 w-full border-b border-gray-100 dark:border-indigo-100/10 bg-blur dark:bg-neutral-700/20
+        text-emphasis mx-auto">
+      <div class="main flex items-center">
+        {% if hasMenu %}
+          <button
+            id="menu-toggle"
+            class="block px-2 w-8 md:hidden mr-4 outline-none hover:text-indigo-500 focus:text-indigo-500"
+            aria-label="Menu toggle"
+            aria-expanded="false"
+            aria-controls="menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        {% endif %}
+        <a href="/" class="mr-auto flex items-center flex-shrink-0">
+          <img src="{{ '/images/wallet_48.png' | url }}" alt="Clear Wallet Logo" class="h-8 mr-2">
+          <span class="md:block hidden text-secondary text-xl font-bold font-headings">Clear EVM Wallet</span>
+        </a>
+        {# {% if url != '/' %} #}
         <div class="max-w-xxs mx-4">
           <div id="docsearch"></div>
         </div>
-      {# {% endif %} #}
-      <nav {% if url != '/' %}class="hidden md:block"{% endif %}>
-        <ul class="flex items-center">
-          <li class="mr-3 hover:text-primary transition-colors duration-300"><a href="/docs">Docs</a></li>
-          <li class="mr-3 text-lg hover:text-primary transition-colors duration-300">
-            <a href="https://github.com/andrei0x309/clear-wallet" target="_blank">
-              <span class="sr-only">CLW on GitHub</span>
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-          <li class="text-lg hover:text-primary transition-colors duration-300">
-            <a href="https://mirror.xyz/andrei0x309.eth/J2R0-rXnEe7nQWILNgwHpFMQXt92ICzeb6WxmepI6Vw?referrerAddress=0x50cCa5ed8B4455fbe316785269FC82500b67fD48" target="_blank">
-              <span class="sr-only">Mirror CLW Article</span>
-                <svg class="w-5" version="1.1" viewBox="0 0 12.7 12.7" xmlns="http://www.w3.org/2000/svg">
-    <rect
-      transform="matrix(-.003489 1 -1 .003744 0 0)"
-      x="2.677"
-      y="-9.17"
-      width="7.39"
-      height="5.741"
-      fill="none"
-      fill-opacity=".9194"
-    />
-    <g transform="translate(-56.93 -61.93)">
-      <g transform="translate(.09449 -.1181)">
-        <path
-          d="m61.29 74.38c-3.128-0.9854-5.134-4.691-4.073-7.832 0.675-2.303 2.739-4.132 5.126-4.456 2.194-0.354 4.477 0.6342 5.842 2.362 1.292 1.516 1.755 3.683 1.153 5.587-0.7087 2.527-3.097 4.464-5.719 4.619-0.7848 0.05528-1.579-0.04132-2.329-0.2803zm4.655-5.097c-0.03294-1.222-0.0038-2.569-0.7236-3.62-0.6628-0.869-1.897-0.9085-2.876-0.6917-0.9421 0.2098-1.448 1.153-1.594 2.035-0.2737 1.509-0.151 3.048-0.179 4.573h5.372v-2.296z"
-          fill="currentColor"
-          stroke-width=".2686"
-        />
-      </g>
-    </g>
-  </svg>
-            </a>
+        {# {% endif %} #}
+        <nav>
+          <ul class="flex items-center">
+            <li {% if r/^\/docs.*/g.test(url) != true  %} class="mr-3 hover:text-primary transition-colors duration-300" {% else %} class="hidden" {% endif %}>
+              <a href="/docs">Docs</a>
+            </li>
+            <li class="mr-3 text-lg hover:text-primary transition-colors duration-300">
+              <a href="https://github.com/andrei0x309/clear-wallet" target="_blank">
+                <span class="sr-only">CLW on GitHub</span>
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <button
+              id="dark-mode-toggle"
+              class="bg-none border-none cursor-pointer mr-3 text-lg hover:text-primary transition-colors duration-300"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </button>
           </li>
         </ul>
       </nav>
     </div>
-  </header>
-
-  {{ content | safe }}
-
-  <footer class="bg-gray-100 dark:bg-opacity-5 py-12">
-    <div class="main flex items-center mx-auto w-[98%] flex-grow">
-      <div class="flex flex-col items-start flex-grow">
-      <div class="flex items-center">
+  </body>
+</html></header>{{ content | safe }}<footer class="bg-neutral-100 dark:bg-neutral-900/80 py-12">
+<div class="main flex items-center mx-auto w-[98%] flex-grow">
+  <div class="flex flex-col items-start flex-grow">
+    <div class="pl-2 md:pl-0 flex items-center">
       <img src="{{ '/images/wallet_48.png' | url }}" alt="Clear EVM Wallet Logo" class="h-8 md:mr-2 mr-auto">
-      <span class="md:block hidden text-secondary text-xl font-bold mr-auto font-headings"> Clear EVM Wallet</span>
-      </div>
-      <span class="text-sm text-tertiary mr-2 mt-2">Proudly powered by Deno🦕 & 
-        <a href="https://lume.land/showcase" target="_blank" class="text-primary" rel="noopener noreferrer nofollow">showcased on Lume</a>
-      </span>
-      </div>
-
-      <div class="flex items-center justify-end">
-      <script>const BADGE_ID = '0d8d932b008cbe28';</script>
-      <script type="text/javascript" src="/js/vendor/alchemy-badge.js"></script>
-      <a href="#">
-          <img onclick=logBadgeClick() id="badge-button" style="width:240px;height:53px;filter: contrast(0.5);" src="/images/vendor/badge.png" alt="Alchemy Supercharged" />
-      </a>
-      </span>
-      <button id="dark-mode-toggle" class="p-1 bg-none border-none" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <i class="fas fa-sun"></i>
-        <i class="fas fa-moon"></i>
-      </button>
-      </div>
+      <span class="md:block hidden text-secondary text-xl font-bold mr-auto font-headings">
+        Clear EVM Wallet</span>
     </div>
-  </footer>
-
-  <script src="/js/vendor/lottie-player.min.js"></script> 
-  <script src="/js/vendor/docsearch.js"></script>
-  <script type="text/javascript">
-    docsearch({
-      appId: '1HI6KIJ6XV',
-      apiKey: 'c167599548883117a084cfef415c8371',
-      indexName: 'clear-wallet-flashsoft',
-      container: '#docsearch',
-      debug: false,
-    });
-  </script>
-   <script defer src='/js/vendor/beacon.min.js' 
-   data-cf-beacon='{"token": "3fbfceca0b6b42f5a4b6b84f3e37b9f1"}'></script>
-</body>
-</html>
+    <span class=" pl-2 md:pl-0 text-sm text-tertiary mr-2 mt-2">Powered by Deno🦕 &
+      <a
+        class="hover:text-amber-500"
+        href="https://lume.land/showcase"
+        target="_blank"
+        class="text-primary"
+        rel="noopener noreferrer nofollow">showcased
+                on Lume</a>
+    </span>
+  </div>
+  <div class="flex items-center justify-end">
+    <script>
+      const BADGE_ID = '0d8d932b008cbe28';
+    </script>
+    <script type="text/javascript" src="/js/vendor/alchemy-badge.js"></script>
+    <a href="#">
+      <img
+        onclick="logBadgeClick()"
+        id="badge-button"
+        class="max-w-[130px] max-h-[36px] md:max-w-[192px] md:max-h-[42px]"
+        style="filter: contrast(0.72);"
+        src="/images/vendor/badge.png"
+        alt="Alchemy Supercharged"/>
+    </a>
+  </span>
+</div></div></footer>{% for script in scripts %}<script src="{{ ('/js/' + script) | url }}"></script>{% endfor %}<script src="/js/vendor/lottie-player.min.js"></script><script src="/js/vendor/docsearch.js"></script><script type="text/javascript">docsearch({
+  appId: '1HI6KIJ6XV',
+  apiKey: 'c167599548883117a084cfef415c8371',
+  indexName: 'clear-wallet-flashsoft',
+  container: '#docsearch',
+  debug: false
+});</script><script defer src='/js/vendor/beacon.min.js' data-cf-beacon='{"token": "3fbfceca0b6b42f5a4b6b84f3e37b9f1"}'></script></body></html>
