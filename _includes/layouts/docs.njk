@@ -6,26 +6,25 @@ styles:
 scripts:
 - menu.js
 ---
+
 <div class="h-16"></div>
-
-<div class="main flex mt-8 mx-auto">
-
-  <nav id="menu" class="sidebar dark:bg-stone-800">
-
+<div class="main flex mt-8 mx-auto px-4 md:px-0">
+  <nav
+    id="menu"
+    class="sidebar dark:bg-neutral-800 fixed px-4 inset-y-0 left-0 transform-gpu -translate-x-full transition-all
+      duration-300 md:static md:transform-none md:translate-0 md:w-1/5 md:pr-8 md:mr-8 md:pl-0 md:mt-0 md:shadow-none;">
     <div class="md:sticky">
       <ul class="scroll-wrapper">
         {% set groupsPages = search.pages('type=docs') | groups %}
         {% for group in groups %}
-          <li {% if loop.index != 1 %}class="mt-8"{% endif %}>
+          <li {% if loop.index != 1 %} class="mt-8" {% endif %}>
             <h5 class="px-2 mb-3 lg:mb-3 uppercase tracking-wide font-semibold text-sm lg:text-xs text-tertiary">
               {{ group.title }}
             </h5>
             <ul>
               {% for docsPage in groupsPages[group.id] %}
                 <li>
-                  <a
-                    class="p-2 transition-colors duration-200 block rounded-md hover:text-blue-500 {% if url == docsPage.url %}text-primary bg-blue-50 dark:bg-gray-800{% else %}text-secondary{% endif %}"
-                    href="{{ docsPage.url }}">
+                  <a class="p-2 transition-colors duration-200 block rounded-md hover:text-blue-500 {% if url == docsPage.url %}text-primary bg-blue-50 dark:bg-gray-800{% else %}text-secondary{% endif %}" href="{{ docsPage.url }}">
                     {{ docsPage.title }}
                   </a>
                 </li>
@@ -33,95 +32,83 @@ scripts:
             </ul>
           </li>
         {% endfor %}
-
-
-        <li class="block md:hidden px-2 text-lg hover:text-primary transition-colors duration-300 border-t flex pt-4 mt-4">
-            <a href="https://github.com/andrei0x309/clear-wallet" target="_blank">
-              <span class="sr-only">CLW on GitHub</span>
-              <i class="fab fa-github"></i>
-            </a>
-<a href="https://mirror.xyz/andrei0x309.eth/J2R0-rXnEe7nQWILNgwHpFMQXt92ICzeb6WxmepI6Vw?referrerAddress=0x50cCa5ed8B4455fbe316785269FC82500b67fD48" target="_blank">
-              <span class="sr-only">Mirror CLW Article</span>
-                <svg class="w-5" version="1.1" viewBox="0 0 30px 30px" xmlns="http://www.w3.org/2000/svg">
-    <rect
-      transform="matrix(-.003489 1 -1 .003744 0 0)"
-      x="2.677"
-      y="-9.17"
-      width="7.39"
-      height="5.741"
-      fill="none"
-      fill-opacity=".9194"
-    />
-    <g transform="translate(-56.93 -61.93)">
-      <g transform="translate(.09449 -.1181)">
-        <path
-          d="m61.29 74.38c-3.128-0.9854-5.134-4.691-4.073-7.832 0.675-2.303 2.739-4.132 5.126-4.456 2.194-0.354 4.477 0.6342 5.842 2.362 1.292 1.516 1.755 3.683 1.153 5.587-0.7087 2.527-3.097 4.464-5.719 4.619-0.7848 0.05528-1.579-0.04132-2.329-0.2803zm4.655-5.097c-0.03294-1.222-0.0038-2.569-0.7236-3.62-0.6628-0.869-1.897-0.9085-2.876-0.6917-0.9421 0.2098-1.448 1.153-1.594 2.035-0.2737 1.509-0.151 3.048-0.179 4.573h5.372v-2.296z"
-          fill="currentColor"
-          stroke-width=".2686"
-        />
-      </g>
-    </g>
-  </svg>
-            </a>
+        <li class="flex md:hidden px-2 text-lg hover:text-primary transition-colors duration-300 border-t pt-4 mt-4">
+          <a href="https://github.com/andrei0x309/clear-wallet" target="_blank">
+            <span class="sr-only">CLW on GitHub</span>
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://mirror.xyz/andrei0x309.eth/J2R0-rXnEe7nQWILNgwHpFMQXt92ICzeb6WxmepI6Vw?referrerAddress=0x50cCa5ed8B4455fbe316785269FC82500b67fD48"
+            target="_blank">
+            <span class="sr-only">Mirror CLW Article</span>
+            <svg class="w-5" version="1.1" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+              <rect
+                transform="matrix(-.003489 1 -1 .003744 0 0)"
+                x="2.677"
+                y="-9.17"
+                width="7.39"
+                height="5.741"
+                fill="none"
+                fill-opacity=".9194"/>
+              <g transform="translate(-56.93 -61.93)">
+                <g transform="translate(.09449 -.1181)">
+                  <path
+                    d="m61.29 74.38c-3.128-0.9854-5.134-4.691-4.073-7.832 0.675-2.303 2.739-4.132 5.126-4.456 2.194-0.354 4.477 0.6342 5.842
+                      2.362 1.292 1.516 1.755 3.683 1.153 5.587-0.7087 2.527-3.097 4.464-5.719 4.619-0.7848
+                      0.05528-1.579-0.04132-2.329-0.2803zm4.655-5.097c-0.03294-1.222-0.0038-2.569-0.7236-3.62-0.6628-0.869-1.897-0.9085-2.876-0.6917-0.9421
+                      0.2098-1.448 1.153-1.594 2.035-0.2737 1.509-0.151 3.048-0.179 4.573h5.372v-2.296z"
+                    fill="currentColor"
+                    stroke-width=".2686"/>
+                </g>
+              </g>
+            </svg>
+          </a>
         </li>
-
       </ul>
     </div>
   </nav>
-
   <article class="flex-auto min-w-0 mx-auto">
-
     {{ content | safe }}
-
     <nav class="py-8 mt-20 mb-8 dark:border-gray-300/10 border-t">
-      <ul class="list-none p-0 flex">
+      <ul class="!list-none !p-0 flex">
         {%- set previousPost = search.previousPage(url, 'type=docs') %}
         {%- if previousPost %}
           <li class="mr-auto my-0">
-            <a
-              class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none"
-              href="{{ previousPost.url | url }}"
-              rel="prev">
-              <i
-                class="fas fa-arrow-left mr-6 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
+            <a class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none" href="{{ previousPost.url | url }}" rel="prev">
+              <i class="fas fa-arrow-left mr-6 group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
               <div class="flex flex-col items-end">
-                <span
-                  class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
+                <span class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Prev</span>
                 <span class="text-secondary">{{ previousPost.title }}</span>
               </div>
             </a>
           </li>
         {% endif %}
-
         {%- set nextPost = search.nextPage(url, 'type=docs') %}
         {%- if nextPost %}
           <li class="ml-auto my-0">
-            <a
-              class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none"
-              href="{{ nextPost.url | url }}"
-              rel="prev">
+            <a class="group rounded flex items-center p-2 text-tertiary transition-colors duration-300 outline-none" href="{{ nextPost.url | url }}" rel="prev">
               <div class="flex flex-col items-start mr-6">
-                <span
-                  class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
+                <span class="text-xs group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300">Next</span>
                 <span class="text-secondary">{{ nextPost.title }}</span>
               </div>
-              <i
-                class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
+              <i class="fas fa-arrow-right group-hover:text-blue-500 group-focus:text-blue-500 transition-colors duration-300"></i>
             </a>
           </li>
         {% endif %}
       </ul>
     </nav>
-
     {% set currentPage = search.pages('url=' + url)[0] %}
     {% if currentPage %}
-    <div class="flex">
-      <a class="ml-auto text-tertiary hover:text-secondary transition-colors duration-300" target="_blank" href="https://github.com/andrei0x309/docs-clear-wallet/tree/main{{ currentPage.src.path + currentPage.src.ext }}"><i class="fab fa-github"></i> Edit this page</a>
-    </div>
+      <div class="flex">
+        <a
+          class="ml-auto text-tertiary hover:text-secondary transition-colors duration-300"
+          target="_blank"
+          href="https://github.com/andrei0x309/docs-clear-wallet/tree/main{{ currentPage.src.path + currentPage.src.ext }}">
+          <i class="fab fa-github"></i>
+          Edit this page</a>
+      </div>
     {% endif %}
-
   </article>
-
   <nav class="sidebar hidden md:block w-1/6 ml-8 pl-8">
     <div class="sticky">
       <div class="scroll-wrapper">
@@ -131,9 +118,8 @@ scripts:
         <ul class="sidebar-scroller text-secondary">
           {% set toc = content | toc %}
           {% for h in toc %}
-            <li{% if h.level > 1 %} class="ml-{{ (h.level - 1) * 2 }}"{% endif %}>
-              <a href="#{{ h.anchor }}"
-                 class="block transform transition-colors duration-200 py-2 hover:text-emphasis">
+            <li {% if h.level > 1 %} class="ml-{{ (h.level - 1) * 2 }}" {% endif %}>
+              <a href="#{{ h.anchor }}" class="block transform transition-colors duration-200 py-2 hover:text-emphasis">
                 {{ h.text }}
               </a>
             </li>
@@ -142,5 +128,4 @@ scripts:
       </div>
     </div>
   </nav>
-
 </div>

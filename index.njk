@@ -5,54 +5,47 @@ styles:
   - home.css
 ---
 
-<div class="main hero mt-12 py-20 flex flex-col-reverse md:flex-row items-center relative mx-auto">
+<div class="main hero mt-[4rem] flex flex-col-reverse md:flex-row items-center relative mx-auto">
 
-  <div class="pl-12 flex flex-col items-center text-center mt-8 md:mt-0 md:mr-auto md:items-start md:text-left">
-    <h1 class="text-5xl font-bold mb-8">Browser Extension Wallet <br>for EVM</h1>
-    <a href="https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0"
-       class="bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
-      Install from Chrome Store
+  <div class="lg:pl-16 flex flex-col items-center text-center mt-4 md:mr-auto md:items-start md:text-left">
+    <h1 class="text-5xl font-bold mb-8">Blockchain Wallet <br>for EVM Networks</h1>
+    <a href="https://chrome.google.com/webstore/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0">
+      <button class="adv-button">
+  <span class="adv-button-text">Install from Webstore</span>
+</button>
+
     </a>
   </div>
 
   <div>
-    <svg class="chevron" width="800px" height="603.3px" viewBox="0 0 205.8 155.2">
+    <svg class="chevron w-[100%] md:w-[50%]" viewBox="0 0 205.8 155.2">
       <style type="text/css">
         .st0 {
           fill: url(#gradient);
         }
       </style>
       <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0" y1="77.5983" x2="205.8001" y2="77.5983">
-        <stop offset="0" style="stop-color: #359bdbc2;"></stop>
-        <stop offset="1" style="stop-color: #3721b1;"></stop>
+        <stop offset="0" style="stop-color: var(--docsearch-muted-color);"></stop>
+        <stop offset="1" style="stop-color: var(--docsearch-hit-active-color);"></stop>
       </linearGradient>
       <path class="st0" d="M205.8,19.1v117.1c0,10.5-8.5,19.1-19.1,19.1H42.5c-7.8,0-14.8-4.7-17.7-12L1.4,84.7c-1.8-4.6-1.8-9.6,0-14.2
     L24.8,12c2.9-7.2,9.9-12,17.7-12h144.2C197.3,0,205.8,8.5,205.8,19.1z"/>
     </svg>
     <lottie-player id="lottieAnim" src="{{'/lottie/logo.json'}}" 
-background="transparent" autoplay loop style="max-width: 60%;
+background="transparent" autoplay loop style="max-width: 50%;
     position: relative;
     right: -38%;
-    margin-top: -3rem;
-    opacity: 0.95;
+    margin-top: 1rem;
+    opacity: 0.85;
     filter: sepia(0.1) invert(0.1) hue-rotate(45deg) drop-shadow(2px 4px 5px #222) saturate(0.2);"></lottie-player>
 
-
-    {# <div class="terminal bg-blur dark rounded-md border border-gray-600 p-4 text-white">
-      <div class="flex mb-2">
-        <div class="w-3 h-3 mr-2 rounded-md bg-red-500"></div>
-        <div class="w-3 h-3 mr-2 rounded-md bg-yellow-500"></div>
-        <div class="w-3 h-3 rounded-md bg-green-500"></div>
-      </div>
-      <asciinema-player src="vr.cast" autoplay></asciinema-player>
-    </div> #}
   </div>
 
 </div>
 
-<div class="bg-gray-100 dark:bg-opacity-5 mt-10 py-24">
+<div class="bg-gray-100 dark:bg-neutral-900/85 mt-6 py-6">
   <div class="main mx-auto">
-   <div class="text-3xl text-center max-w-lg mx-auto pb-20 text-gray-800 dark:text-gray-200 font-semibold leading-relaxed">
+   <div class="text-3xl text-center max-w-lg mx-auto mb-8 text-gray-800 dark:text-gray-200 font-semibold leading-relaxed">
      Unique Features
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-y-12 text-center">
@@ -62,8 +55,8 @@ background="transparent" autoplay loop style="max-width: 60%;
         </div>
         <h6 class="text-xl font-semibold">No Tracking & Open Source</h6>
         <p class="highlight-description">
-         0 tracking data of any kind not even analytics.
-        Open source, based on etheres, not a fork wallet.
+        Zero tracking of any kind, privacy focused.
+        Open source, based on ethers
         </p>
       </div>
       <div class="flex flex-col mx-auto items-center max-w-xs">
@@ -73,7 +66,7 @@ background="transparent" autoplay loop style="max-width: 60%;
         <h6 class="text-xl font-semibold">Simple Interface & implements MetamaskAPI</h6>
         <p class="highlight-description">
           Simple and intuitive interface for managing accounts and networks.
-          Implements MetamaskAPI, so you can use any dapp with this wallet.
+          Implements Metamask, so you can use any DApp that supports Metamask.
         </p>
       </div>
       <div class="flex flex-col mx-auto items-center max-w-xs">
@@ -110,8 +103,8 @@ background="transparent" autoplay loop style="max-width: 60%;
         </div>
         <h6 class="text-xl font-semibold">Lightweight</h6>
         <p class="highlight-description">
-          Lightweight, no ads, no tracking, no analytics, no bloatware.
-          Less then 400kb.
+          Lightweight, EVM only dependencies builds in less than 6 seconds.
+          Very small footprint less than 1MB.
         </p>
       </div>
       <div class="flex flex-col mx-auto items-center max-w-xs">
@@ -139,7 +132,7 @@ background="transparent" autoplay loop style="max-width: 60%;
         </div>
         <h6 class="text-xl font-semibold">Repeatable Actions</h6>
         <p class="highlight-description">
-            This wallet allows you to repeat any save interactions with contracts 
+            This wallet allows you to repeat any saved contract interaction  
             so you can easily repeat the same actions.
         </p>
       </div>
@@ -147,10 +140,14 @@ background="transparent" autoplay loop style="max-width: 60%;
   </div>
 </div>
 
-<div class="main my-12 py-12 flex flex-col items-center justify-center mx-auto">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qmOUM7bXzpE?si=02qzG5pQsBGRhtpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="main my-12 flex flex-col items-center justify-center mx-auto">
+     <div class="text-2xl text-center max-w-lg mx-auto mb-4 text-gray-800 dark:text-gray-200 font-semibold leading-relaxed">
+     Video Demo
+    </div>
+
+  <iframe class="w-[300px] h-[160px] md:w-[560px] md:h-[315px] lg:w-[672px] lg:h-[378px]" src="https://www.youtube-nocookie.com/embed/qmOUM7bXzpE?si=02qzG5pQsBGRhtpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   <a href="/docs"
-     class="text-xl mt-4 bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white text-lg">
-    Get started
+     class="text-xl mt-4 bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300 rounded-lg shadow px-5 py-3 text-white">
+    Check the documentaion
   </a>
 </div>

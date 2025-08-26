@@ -15,13 +15,6 @@ Docs Deployed at [https://clear-wallet.flashsoft.eu/](https://clear-wallet.flash
 
 [Logs of the deployments](./schedule.log)
 
-### Related Farcaster repositories on my github
+### Other Projects from me
 
-  - **[X qoute to warpcast](https://github.com/andrei0x309/x-to-warpcast-extension)**
-  > Chrome extension that helps you post any tweet on warpcast.com
-  - **[easy warp login](https://github.com/andrei0x309/warp-easy-login-browser-extension)**
-  > Chrome extension that allows you to login on warpcast.com with any wallet that has a custody farcaster private key ( this functionality also exist in clear wallet)
-  - **[farcaster-hub-utils](https://github.com/andrei0x309/farcaster-hub-utils)**
-  > TS library to help interacting with a hubs using signer keys
-  - **[yup-live](https://github.com/andrei0x309/yup-live)** 
-  > an open source multi client(lens, farcaster, bluesky, X) for web/desktop/android.
+- [https://flashsoft.eu/projects](https://flashsoft.eu/projects)

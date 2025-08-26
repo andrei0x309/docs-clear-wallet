@@ -3,15 +3,14 @@ import date from 'lume/plugins/date.ts';
 import codeHighlight from 'lume/plugins/code_highlight.ts';
 import markdownItAnchor from 'npm:markdown-it-anchor';
 import { load } from 'npm:cheerio';
-import sass from "lume/plugins/sass.ts";
-import postcss from "lume/plugins/postcss.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
-import { tWindConfig } from "./tailwind.ts";
 import { writeChangeLog } from './utils/github.ts';
 import { download } from './utils/misc.ts';
 import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
+import brotli from "lume/plugins/brotli.ts";
+
 
 
 
@@ -40,12 +39,17 @@ site.use(date());
 site.use(codeHighlight());
 site.copy('static', '');
 
-site.use(sass());
+// site.use(sass());
 site.use(tailwindcss({
-  extensions: ['.html'],
-  options: tWindConfig as any,
+  minify: true,
 }));
-site.use(postcss());
+site.add('styles/tailwind.css')
+site.add('styles/code-theme.css')
+site.add('styles/home.css')
+site.add('styles/main.css')
+site.add('js/menu.js')
+
+// site.use(postcss());
 site.use(robots({
   filename: "robots.txt",
 }))
@@ -53,6 +57,7 @@ site.use(sitemap({
   filename: "sitemap.xml",
 }))
 
+site.use(brotli());
 
 site.filter('groups', items => items.reduce((grouped: any, item: any) => {
     const {group} = item;
@@ -91,6 +96,8 @@ site.addEventListener("afterBuild", async () => {
     download('https://static.cloudflareinsights.com/beacon.min.js', Deno.cwd() + '/_site/js/vendor/beacon.min.js'),
   ]);
 });
+
+
 
  
 // site.data('CWversion', () => {
