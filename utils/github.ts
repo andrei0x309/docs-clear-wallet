@@ -8,17 +8,31 @@ const CONST = {
 export const getGithubFile = async ({
     username,
     repo,
-    path
+    path,
+    retry = 0
 }: {
     username: string;
     repo: string;
     path: string;
-}) => {
+    retry?: number
+}): Promise<string> => {
     const url = `https://api.github.com/repos/${username}/${repo}/contents/${path}`
     const response = await fetch(url);
     const data = await response.text();
     const { content } = JSON.parse(data);
-    return base64Decode(content)
+    let decodedContent;
+    try {
+        decodedContent = base64Decode(content);
+    } catch {
+        if (retry < 3) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            return getGithubFile({ username, repo, path, retry: retry + 1 });
+        } else {
+            console.error('Error decoding content from GitHub, retry limit exceeded');
+        }
+    }
+
+    return decodedContent || '';
 }
 
 // title: FAQ
