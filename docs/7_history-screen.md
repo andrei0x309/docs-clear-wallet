@@ -1,7 +1,7 @@
 ---
 title: History Screen
 group: guides
-description: How to use the history screen
+description: Instructions for using the history screen - clear wallet
 type: docs
 pageOrder: 5
 ---

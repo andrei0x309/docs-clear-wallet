@@ -1,4 +1,8 @@
 import { base64Decode, createMDHeader } from './misc.ts';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
+
+
 
 const CONST = {
     username: 'andrei0x309',
@@ -46,7 +50,7 @@ export const createChangeLog = async () => {
     const header = createMDHeader({
         title: 'Change Log',
         group: 'github',
-        description: 'Change Log',
+        description: 'Automated Changelog - clear wallet',
         templateEngine: 'njk,md',
         type: 'docs',
         pageOrder: 1,
@@ -63,6 +67,8 @@ export const createChangeLog = async () => {
 }
 
 export const writeChangeLog = async () => {
-    const changeLog = await createChangeLog();
-    await Deno.writeTextFile('./docs/automated-changelog.md', changeLog, {create: true});
-}
+  const filePath = './docs/automated-changelog.md';
+  const changeLog = await createChangeLog();
+  await mkdir(dirname(filePath), { recursive: true });
+  await writeFile(filePath, changeLog, 'utf8');
+};

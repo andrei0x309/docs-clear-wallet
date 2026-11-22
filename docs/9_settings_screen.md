@@ -1,7 +1,7 @@
 ---
 title: Settings Screen
 group: guides
-description: How to use the settings screen
+description: Instructions for using the settings screen - clear wallet
 type: docs
 pageOrder: 7
 ---

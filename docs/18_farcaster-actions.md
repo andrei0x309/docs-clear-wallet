@@ -1,7 +1,7 @@
 ---
 title: Farcaster Actions
 group: guides
-description: How to use the main screen
+description: Instructions for using farcaster actions - clear wallet
 type: docs
 pageOrder: 4
 ---

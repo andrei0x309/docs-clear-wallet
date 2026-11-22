@@ -1,7 +1,7 @@
 ---
 title: Networks Screen
 group: guides
-description: How to use the networks screen
+description: Instructions for using the networks screen - clear wallet
 # url: ./networks-screen
 type: docs
 pageOrder: 3

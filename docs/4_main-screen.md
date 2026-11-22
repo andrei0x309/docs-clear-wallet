@@ -1,7 +1,7 @@
 ---
 title: Main Screen
 group: guides
-description: How to use the main screen
+description: Instructions for using the main screen - clear wallet
 type: docs
 # url: ./main-screen
 pageOrder: 1

@@ -1,7 +1,7 @@
 ---
 title: Read Contract Screen
 group: guides
-description: How to use the Read Contract Screen
+description: Instructions for using Read Contract Screen - clear wallet
 type: docs
 pageOrder: 9
 # url: ./read-contract
