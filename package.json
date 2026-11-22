@@ -22,6 +22,7 @@
     "@lumeland/plugin-sitemap": "^1.0.0",
     "@lumeland/plugin-tailwindcss": "^1.0.0",
     "@lumeland/ssx": "^0.1.16",
+    "@tailwindcss/typography": "^0.5.20",
     "cheerio": "^1.2.0",
     "markdown-it-anchor": "^10.1.0"
   }
