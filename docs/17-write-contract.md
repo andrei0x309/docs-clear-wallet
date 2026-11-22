@@ -1,7 +1,7 @@
 ---
 title: Write Contract Screen
 group: guides
-description: How to use the Write Contract Screen
+description: Instructions for using the Write Contract Screen - clear wallet
 type: docs
 pageOrder: 10
 # url: ./write-contract

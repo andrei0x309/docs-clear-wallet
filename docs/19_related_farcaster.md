@@ -1,7 +1,7 @@
 ---
 title: Related Farcaster Projects
 group: help-support
-description: Related Farcaster projects
+description: Related Farcaster projects - clear wallet
 type: docs
 pageOrder: 3
 # url: ./additional-info

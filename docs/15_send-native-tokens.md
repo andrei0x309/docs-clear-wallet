@@ -1,7 +1,7 @@
 ---
 title: Send Native Tokens Screen
 group: guides
-description: How to use the Send Native Tokens Screen
+description: Instructions for using the Send Native Tokens Screen - clear wallet
 type: docs
 pageOrder: 8
 # url: ./send-native-tokens

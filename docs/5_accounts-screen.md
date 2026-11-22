@@ -1,7 +1,7 @@
 ---
 title: Accounts screen
 group: guides
-description: How to use the accounts screen
+description: Instructions for using the accounts screen - clear wallet
 type: docs
 # url: ./accounts-screen
 pageOrder: 2

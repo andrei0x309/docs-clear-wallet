@@ -21,17 +21,18 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Setup Deno environment
-        uses: denolib/setup-deno@v2
-        with:
-          deno-version: '2.x'
+      - name: Setup Bun environment
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
       - name: Build site
-        run: deno task build
-      
+        run: bun run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      
+
       - name: Upload artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
@@ -40,7 +41,7 @@ jobs:
 
       # Adding this because schedule workflows may stop if there's a 60-day gap between repo activity
       - name: Write Schedule Log
-        run: echo "Deployed at $(date)\n" >> schedule.log
+        run: echo "Deployed at $(date)" >> schedule.log
         if: github.event_name == 'schedule'
 
       - name: Commit Schedule Log
@@ -52,7 +53,7 @@ jobs:
           committer_name: "GitHub Actions"
           committer_email: 41898282+github-actions[bot]@users.noreply.github.com
         if: github.event_name == 'schedule'
-  
+
   # Deployment job
   deploy:
     environment:

@@ -1,7 +1,7 @@
 ---
 title: Assets Screen
 group: guides
-description: How to use the assets screen
+description: Instructions for using the assets screen - clear wallet
 type: docs
 pageOrder: 6
 ---

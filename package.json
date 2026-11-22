@@ -1,0 +1,28 @@
+{
+  "name": "docs-clear-wallet",
+  "private": true,
+  "type": "module",
+  "allowScripts": {
+    "esbuild": false,
+    "fsevents": false,
+    "@parcel/watcher": false
+  },
+  "scripts": {
+    "serve": "lume build -s",
+    "build": "lume build"
+  },
+  "devDependencies": {
+    "@lumeland/core": "^1.0.5",
+    "@lumeland/lume": "^4.0.3",
+    "@lumeland/plugin-code-highlight": "^1.0.0",
+    "@lumeland/plugin-compress": "^1.0.0",
+    "@lumeland/plugin-date": "^1.0.0",
+    "@lumeland/plugin-nunjucks": "^1.0.0",
+    "@lumeland/plugin-robots": "^1.0.0",
+    "@lumeland/plugin-sitemap": "^1.0.0",
+    "@lumeland/plugin-tailwindcss": "^1.0.0",
+    "@lumeland/ssx": "^0.1.16",
+    "cheerio": "^1.2.0",
+    "markdown-it-anchor": "^10.1.0"
+  }
+}
